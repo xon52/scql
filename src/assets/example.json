@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "questions": [
+      {
+        "name": "from",
+        "label": "Who is this for?",
+        "value": "John",
+        "type": "text"
+      },
+      {
+        "name": "message",
+        "label": "What do you want to say?",
+        "value": "Hello",
+        "type": "text"
+      },
+      {
+        "name": "to",
+        "label": "Who is this to?",
+        "value": "James",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "How much is it?",
+        "value": 100,
+        "type": "currency"
+      }
+    ]
+  }
+]
