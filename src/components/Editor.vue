@@ -1,43 +1,28 @@
 <template>
-  <v-container>
-    <template v-if="scripts.length > 0">
-      <v-select label="Select" :items="scripts" item-title="id" return-object @update:model-value="select" />
-      <v-textarea v-model="selectedScript" :rows="20" />
-      <v-btn @click="save" :disabled="!canSave">{{ exists ? 'Save' : 'Add' }}</v-btn>
-    </template>
-    <template v-else>
-      <a href="#" @click="loadScripts">Load scripts</a>
-    </template>
-  </v-container>
+  <v-card v-if="template">
+    <v-text-field disabled label="ID">{{ template.id }}</v-text-field>
+    <v-text-field disabled label="Version">{{ template.version }}</v-text-field>
+    <v-text-field label="Title">{{ title }}</v-text-field>
+    <v-textarea v-model="json" :rows="20" />
+    <v-btn @click="save" :disabled="!canSave">{{ exists ? 'Save' : 'Add' }}</v-btn>
+  </v-card>
 </template>
 
 <script setup lang="ts">
-import { ScriptType } from '@/types/scriptTypes'
+import { Template, Inspection } from '@/types/types'
 import { computed, Ref, ref } from 'vue'
-import { getScripts, getSelectedScript, selectScript, updateScript, addScript, loadScripts } from '../store/scriptStore'
+import * as editor from '@/store/editorStore'
 
-const scripts = getScripts()
-const selectedScript = ref('')
+const template = editor.template.value
+const title = editor.template.value?.title
+const json = JSON.stringify(template?.questions, undefined, 2)
 
 const save = () => {
-  if (exists.value) updateScript(JSON.parse(selectedScript.value))
-  else addScript(JSON.parse(selectedScript.value))
+  editor.save()
 }
-const select = (s: ScriptType) => {
-  selectScript(s)
-  selectedScript.value = JSON.stringify(getSelectedScript(), undefined, 2)
-}
-const exists = computed(() => {
-  try {
-    const temp = JSON.parse(selectedScript.value)
-    if (scripts.value.find((e) => e.id === temp.id)) return true
-  } catch (error) {
-    return false
-  }
-})
 const canSave = computed(() => {
   try {
-    JSON.parse(selectedScript.value)
+    JSON.parse(tempScript.value)
     return true
   } catch (error) {
     return false

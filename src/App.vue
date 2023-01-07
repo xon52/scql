@@ -10,11 +10,17 @@
       <v-container>
         <v-row no-gutters>
           <v-col>
-            <EditorVue />
+            <TemplateListVue />
+            <hr />
+            <InspectionListVue />
+            <!-- <EditorVue /> -->
           </v-col>
 
           <v-col>
-            <InterpreterVue />
+            <!-- <InterpreterVue /> -->
+          </v-col>
+          <v-col>
+            <!-- <InterpreterVue /> -->
           </v-col>
         </v-row>
       </v-container>
@@ -26,10 +32,12 @@
 import { darkTheme } from '@/store/appStore'
 import { onMounted } from 'vue'
 import EditorVue from './components/Editor.vue'
+import InspectionListVue from './components/InspectionList.vue'
 import InterpreterVue from './components/Interpreter.vue'
-import { loadScripts } from './store/scriptStore'
+import TemplateListVue from './components/TemplateList.vue'
+import { load } from './store/templateStore'
 
 const toggleTheme = () => (darkTheme.value = !darkTheme.value)
 
-onMounted(() => loadScripts())
+onMounted(() => load())
 </script>

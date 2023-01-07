@@ -1,31 +1,69 @@
 [
   {
-    "id": 1,
+    "id": "1",
+    "version": "1",
+    "title": "Unnamed Template",
     "questions": [
       {
         "name": "from",
         "label": "Who is this for?",
-        "value": "John",
+        "initial": "John",
         "type": "text"
       },
       {
         "name": "message",
         "label": "What do you want to say?",
-        "value": "Hello",
+        "initial": "Hello",
         "type": "text"
       },
       {
         "name": "to",
         "label": "Who is this to?",
-        "value": "James",
+        "initial": "James",
         "type": "text"
       },
       {
         "name": "price",
         "label": "How much is it?",
-        "value": 100,
+        "required": true,
         "type": "currency"
       }
     ]
+  },
+  {
+    "id": "1",
+    "version": "2",
+    "title": "Unnamed Template",
+    "questions": []
+  },
+  {
+    "id": "2",
+    "version": "1",
+    "title": "Unnamed Template",
+    "questions": []
+  },
+  {
+    "id": "2",
+    "version": "2",
+    "title": "Unnamed Template",
+    "questions": []
+  },
+  {
+    "id": "3",
+    "version": "1",
+    "title": "Unnamed Template",
+    "questions": []
+  },
+  {
+    "id": "4",
+    "version": "1",
+    "title": "Unnamed Template",
+    "questions": []
+  },
+  {
+    "id": "5",
+    "version": "1",
+    "title": "Unnamed Template",
+    "questions": []
   }
 ]
