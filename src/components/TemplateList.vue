@@ -16,7 +16,7 @@
         v-for="item in templates"
         :key="`${item.id}.${item.version}`"
         :title="item.title ? item.title : 'Unnamned'"
-        :subtitle="`ID: ${item.id} - v${item.version}`"
+        :subtitle="getModified(item.modified)"
         @click="edit(item)"
       >
         <template v-slot:prepend>
@@ -41,12 +41,14 @@ import { templates } from '@/store/templateStore'
 import * as editor from '@/store/editorStore'
 import { Template } from '@/types/types'
 import { Ref, ref } from 'vue'
+import dayjs from 'dayjs'
 
 const selected: Ref<Template[]> = ref([])
-const edit = (template: Template) => editor.edit('template', template)
+const edit = (template: Template) => editor.editTemplate(template)
 const start = () => {
   throw new Error('Not implemented')
 }
+const getModified = (timestamp: number) => dayjs(timestamp).format('D MMM YYYY - HH:mm')
 </script>
 
 <style lang="scss" scoped></style>

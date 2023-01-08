@@ -13,10 +13,11 @@
             <TemplateListVue />
             <hr />
             <InspectionListVue />
-            <!-- <EditorVue /> -->
           </v-col>
 
           <v-col>
+            <TemplateEditorVue />
+            <!-- <EditorVue /> -->
             <!-- <InterpreterVue /> -->
           </v-col>
           <v-col>
@@ -34,10 +35,11 @@ import { onMounted } from 'vue'
 import EditorVue from './components/Editor.vue'
 import InspectionListVue from './components/InspectionList.vue'
 import InterpreterVue from './components/Interpreter.vue'
+import TemplateEditorVue from './components/templateEditor/TemplateEditor.vue'
 import TemplateListVue from './components/TemplateList.vue'
-import { load } from './store/templateStore'
+import { loadExamples } from './store/templateStore'
 
 const toggleTheme = () => (darkTheme.value = !darkTheme.value)
 
-onMounted(() => load())
+onMounted(() => loadExamples())
 </script>

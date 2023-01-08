@@ -1,8 +1,9 @@
 [
   {
-    "id": "1",
-    "version": "1",
-    "title": "Unnamed Template",
+    "id": "645d46e3-7e3b-46ac-aba5-1255e43f6880",
+    "version": "1b383f8a-ebe5-4a59-b465-f87014137a3d",
+    "modified": 1673095798634,
+    "title": "Example Template",
     "questions": [
       {
         "name": "from",
@@ -31,38 +32,9 @@
     ]
   },
   {
-    "id": "1",
-    "version": "2",
-    "title": "Unnamed Template",
-    "questions": []
-  },
-  {
-    "id": "2",
-    "version": "1",
-    "title": "Unnamed Template",
-    "questions": []
-  },
-  {
-    "id": "2",
-    "version": "2",
-    "title": "Unnamed Template",
-    "questions": []
-  },
-  {
-    "id": "3",
-    "version": "1",
-    "title": "Unnamed Template",
-    "questions": []
-  },
-  {
-    "id": "4",
-    "version": "1",
-    "title": "Unnamed Template",
-    "questions": []
-  },
-  {
-    "id": "5",
-    "version": "1",
+    "id": "61fc536b-eb18-4bec-bb2d-9a156b6acdcf",
+    "version": "ecd10ba1-6296-4308-b8ce-25725c67d68d",
+    "modified": 1673095398634,
     "title": "Unnamed Template",
     "questions": []
   }

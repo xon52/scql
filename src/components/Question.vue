@@ -14,10 +14,10 @@
 </template>
 
 <script setup lang="ts">
-import { QuestionType } from '@/types/types'
+import { Question } from '@/types/types'
 import { ref, Ref } from 'vue'
 
-const props = defineProps<{ question: QuestionType }>()
+const props = defineProps<{ question: Question }>()
 const emit = defineEmits<{
   (e: 'change', name: string, value: string | number): void
 }>()

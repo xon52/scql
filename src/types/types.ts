@@ -1,8 +1,8 @@
 import { v4 as uuid } from 'uuid'
-import { Template } from './TemplateClass'
-import { Question } from './QuestionClass'
+import { Template } from './Template'
+import { Question } from './Question'
 
-export { Template, Question }
+export type { Template, Question }
 
 export class Inspection {
   id: string
