@@ -11,13 +11,13 @@
         </v-tooltip>
       </template>
     </v-toolbar>
-    <VList density="compact" v-model:selected="selected" height="200">
+    <VList density="compact" height="200">
       <v-list-item
         v-for="item in templates"
         :key="`${item.id}.${item.version}`"
         :title="item.title ? item.title : 'Unnamned'"
         :subtitle="getModified(item.modified)"
-        @click="edit(item)"
+        @click="select(item)"
       >
         <template v-slot:prepend>
           <v-avatar>
@@ -37,14 +37,11 @@
 </template>
 
 <script setup lang="ts">
-import { templates } from '@/store/templateStore'
-import * as editor from '@/store/editorStore'
+import { templates, select } from '@/store/templateStore'
 import { Template } from '@/types/types'
 import { Ref, ref } from 'vue'
 import dayjs from 'dayjs'
 
-const selected: Ref<Template[]> = ref([])
-const edit = (template: Template) => editor.editTemplate(template)
 const start = () => {
   throw new Error('Not implemented')
 }

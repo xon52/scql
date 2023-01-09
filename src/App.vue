@@ -9,19 +9,14 @@
     <v-main>
       <v-container>
         <v-row no-gutters>
-          <v-col>
+          <v-col :cols="4">
             <TemplateListVue />
             <hr />
             <InspectionListVue />
           </v-col>
 
-          <v-col>
+          <v-col :cols="7" :offset="1">
             <TemplateEditorVue />
-            <!-- <EditorVue /> -->
-            <!-- <InterpreterVue /> -->
-          </v-col>
-          <v-col>
-            <!-- <InterpreterVue /> -->
           </v-col>
         </v-row>
       </v-container>

@@ -39,7 +39,7 @@ const cancel = () => {
 }
 
 watch(
-  props.target,
+  () => props.target,
   (newVal) => {
     json.value = JSON.stringify(newVal, null, 2)
   },
